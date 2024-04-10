@@ -2,7 +2,7 @@
 
 
 ## Introduction
-We present MonoPSTR, which employs a dynamic Position&Scaleaware TRansformer for Monocular 3D detection. Our approach introduces a Dynamically and Explicitly Position-coded query(DEP-query) and a Scale-assisted Deformable Attention (SDA) module to help the raw query possess valuable spatial and content cues. Specifically, the DEP-query employs explicit position priors of 3D projection coordinates to enhance the accuracy of query localization, thereby enabling the attention layers in the decoder to avoid noisy background information. The SDA module optimizes the receptive field learning of queries by the size priors of the corresponding 2D boxes, thus the queries could acquire high-quality visual features. Both the position and size priors do not require any additional data and are updated in each layer of the decoder to provide long-term assistance.
+We present MonoPSTR, which employs a dynamic Position&Scale-aware TRansformer for Monocular 3D detection. Our approach introduces a Dynamically and Explicitly Position-coded query(DEP-query) and a Scale-assisted Deformable Attention (SDA) module to help the raw query possess valuable spatial and content cues. Specifically, the DEP-query employs explicit position priors of 3D projection coordinates to enhance the accuracy of query localization, thereby enabling the attention layers in the decoder to avoid noisy background information. The SDA module optimizes the receptive field learning of queries by the size priors of the corresponding 2D boxes, thus the queries could acquire high-quality visual features. Both the position and size priors do not require any additional data and are updated in each layer of the decoder to provide long-term assistance.
 <div align="center">
   <img src="pipline.png"/>
 </div>
@@ -39,7 +39,7 @@ We present MonoPSTR, which employs a dynamic Position&Scaleaware TRansformer fo
  
 5. You shoud download the KITTI, Waymo datasets, and follow the OpenPCDet(https://github.com/open-mmlab/OpenPCDet) to generate data infos. These datasets shold have the following organization:
     ```
-KITTI:
+    KITTI:
 ├── data
 │   ├── kitti
 │   │   │── ImageSets
@@ -48,7 +48,7 @@ KITTI:
 │   │   │── testing
 │   │   │   ├──calib & velodyne & image_2
 
-Waymo:
+    Waymo:
 ├── data
 │   ├── waymo
 │   │   │── ImageSets
