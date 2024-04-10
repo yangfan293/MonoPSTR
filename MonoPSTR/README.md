@@ -2,7 +2,7 @@
 
 
 ## Introduction
-We present MonoPSTR, which employs a dynamic Position&Scale-aware TRansformer for Monocular 3D detection. Our approach introduces a Dynamically and Explicitly Position-coded query(DEP-query) and a Scale-assisted Deformable Attention (SDA) module to help the raw query possess valuable spatial and content cues. Specifically, the DEP-query employs explicit position priors of 3D projection coordinates to enhance the accuracy of query localization, thereby enabling the attention layers in the decoder to avoid noisy background information. The SDA module optimizes the receptive field learning of queries by the size priors of the corresponding 2D boxes, thus the queries could acquire high-quality visual features. Both the position and size priors do not require any additional data and are updated in each layer of the decoder to provide long-term assistance.
+We present MonoPSTR, which employs a dynamic Position&Scale-aware TRansformer for Monocular 3D detection. Our approach introduces a Dynamically and Explicitly Position-coded query(DEP-query) and a Scale-assisted Deformable Attention (SDA) module to help the raw query possess valuable spatial and content cues. Specifically, the DEP-query employs explicit position priors of 3D projection coordinates to enhance the accuracy of query localization, thereby enabling the attention layers in the decoder to avoid noisy background information. The SDA module optimizes the receptive field learning of queries by the size priors of the corresponding 2D boxes, thus the queries could acquire high-quality visual features. Both the position and size priors do not require any additional data and are updated in each layer of the decoder to provide long-term assistance.
 <div align="center">
   <img src="pipline.png"/>
 </div>
@@ -37,34 +37,8 @@ We present MonoPSTR, which employs a dynamic Position&Scale-aware TRansformer fo
     mkdir logs
     ```
  
-5. You shoud download the KITTI, Waymo datasets, and follow the OpenPCDet(https://github.com/open-mmlab/OpenPCDet) to generate data infos. These datasets shold have the following organization:
-    ```
-    KITTI:
-├── data
-│   ├── kitti
-│   │   │── ImageSets
-│   │   │── training
-│   │   │   ├──calib & velodyne & label_2 & image_2 & (optional: planes) & (optional: depth_2)
-│   │   │── testing
-│   │   │   ├──calib & velodyne & image_2
-
-    Waymo:
-├── data
-│   ├── waymo
-│   │   │── ImageSets
-│   │   │── raw_data
-│   │   │   │── segment-xxxxxxxx.tfrecord
-|   |   |   |── ...
-|   |   |── waymo_processed_data_v0_5_0
-│   │   │   │── segment-xxxxxxxx/
-|   |   |   |── ...
-│   │   │── waymo_processed_data_v0_5_0_gt_database_train_sampled_1/  (old, for single-frame)
-│   │   │── waymo_processed_data_v0_5_0_waymo_dbinfos_train_sampled_1.pkl  (old, for single-frame)
-│   │   │── waymo_processed_data_v0_5_0_gt_database_train_sampled_1_global.npy (optional, old, for single-frame)
-│   │   │── waymo_processed_data_v0_5_0_infos_train.pkl (optional)
-│   │   │── waymo_processed_data_v0_5_0_infos_val.pkl (optional)
-    ```
-    You can also change the data path at "dataset/root_dir" in `configs/monopstr_kitti.yaml` and `configs/monopstr_waymo.yaml`
+5. You shoud download the KITTI, Waymo datasets, and follow the OpenPCDet(https://github.com/open-mmlab/OpenPCDet) to generate data infos.
+   You can also change the data path at "dataset/root_dir" in `configs/monopstr_kitti.yaml` and `configs/monopstr_waymo.yaml`
     
 ## Get Started (We take the example on KITTI, follow the DEVIANT to further process the Waymo dataset.)
 
