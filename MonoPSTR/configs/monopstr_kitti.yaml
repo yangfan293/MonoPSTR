@@ -103,7 +103,7 @@ lr_scheduler:
 
 
 trainer:
-  max_epoch: 100
+  max_epoch: 110
   gpu_ids: '1'
   save_frequency: 1  # checkpoint save interval (in epoch)
   # resume_model: True
