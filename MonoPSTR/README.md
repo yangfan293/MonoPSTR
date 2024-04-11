@@ -1,5 +1,5 @@
 # MonoPSTR: Monocular 3D Object Detection with Dynamic Position&Scale-aware Transformer
-https://github.com/yangfan293/MonoPSTR/assets/93640743/bdf922ad-76e4-4d1f-ab11-09a1842d2186
+![output_github](https://github.com/yangfan293/MonoPSTR/assets/93640743/5fa921b1-bb71-44c0-91df-6a0aef40c14e)
 ## Introduction
 We present MonoPSTR, which employs a dynamic Position&Scale-aware TRansformer for Monocular 3D detection. Our approach introduces a Dynamically and Explicitly Position-coded query(DEP-query) and a Scale-assisted Deformable Attention (SDA) module to help the raw query possess valuable spatial and content cues. Specifically, the DEP-query employs explicit position priors of 3D projection coordinates to enhance the accuracy of query localization, thereby enabling the attention layers in the decoder to avoid noisy background information. The SDA module optimizes the receptive field learning of queries by the size priors of the corresponding 2D boxes, thus the queries could acquire high-quality visual features. Both the position and size priors do not require any additional data and are updated in each layer of the decoder to provide long-term assistance.
 <div align="center">
